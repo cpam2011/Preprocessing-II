@@ -1,4 +1,5 @@
-/*Variables and Mixins*/
+/*Variables */
+/*Mixins*/
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -169,6 +170,11 @@ img {
   width: 100%;
   margin: 0 auto;
 }
+@media(max-width:500px) {
+  .container{
+    width: 94%;
+  }
+}
 header {
   padding: 20px 0;
   display: flex;
@@ -176,9 +182,11 @@ header {
   border-bottom: 2px dashed #C0C0C0;
 }
 @media (max-width: 500px) {
+  header {
   padding-bottom: 10px;
+  }
 }
-.head-container {
+header .head-container {
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
@@ -187,16 +195,18 @@ header {
   align-items: center;
 }
 @media (max-width: 500px) {
+  header .head-container {
   flex-direction: column;
   width: 85%;
-  nav {
+  }
+  header .head-container nav {
     width: 100%;
     display: flex;
     padding-top: 20px;
     justify-content: space-between;
   }
 }
-a {
+header a {
   text-decoration: none;
   color: #212529;
   font-size: 1.6rem;
@@ -213,19 +223,42 @@ a {
   font-size: 1.6rem;
   padding: 20px;
 }
+.welcome{
+  margin: 30px 0;
+  padding-bottom: 15px;
+  border-bottom: 2px dashed #C0C0C0;
+}
 .home .content-section {
   margin: 30px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+@media (max-width: 500px){
+  .home .content-section{
+    flex-direction: column;
+    align-items:center;
+  }
+}
 .home .content-section .text-content {
   width: 48%;
   padding-right: 1%;
 }
+@media (max-width: 500px){
+  .home .content-section .text-content{
+    width: 100%;
+    padding-right: 0;
+  }
+}
 .home .content-section .img-content {
   width: 48%;
   padding-left: 1%;
+}
+@media(max-width: 500px){
+  .home .content-section .img-content{
+    width: 100%;
+    padding-right: 0;
+  }
 }
 .home .content-section .img-content img {
   border-radius: 10px;
@@ -234,18 +267,40 @@ a {
   padding-bottom: 30px;
   border-bottom: 2px dashed #C0C0C0;
 }
+@media(max-width: 500px){
+  .home .inverse-content{
+    display:flex;
+    flex-direction: column;
+  }
+}
 .home .inverse-content .text-content {
   padding-left: 1%;
   padding-right: 0;
+}
+@media(max-width: 500px) {
+  .home .inverse-content .text-content{
+    order: -1;
+    padding:0;
+    width: 100%;
+  }
 }
 .home .inverse-content .img-content {
   padding-right: 1%;
   padding-left: 0;
 }
+@media(max-width: 500px){
+  .home .inverse-content .img-content{
+    padding: 0;
+  }
+}
 .home .content-destination {
   width: 75%;
   margin: 0 auto 30px;
 }
+@media (max-width: 500px) {
+  .home .content-destination {
+    width: 100%;
+  }
 .home .content-destination img {
   border-radius: 10px;
 }
@@ -254,8 +309,30 @@ a {
   border-top: 2px dashed #C0C0C0;
   display: flex;
   justify-content: space-between;
+
+}
+@media (max-width: 500px){
+  .home .content-pick{
+  flex-direction: column;
+  align-items: center;
+  }
 }
 .home .content-pick .destination {
   width: 30%;
   margin-bottom: 30px;
+}
+@media (max-width: 500px) {
+  .home .content-pick .destination{
+    width: 85%;
+  }
+}
+.home .btn button {
+  width:83%;
+  background-color: #0f6674;
+  border-radius: 15px;
+  padding: 13px 0;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: bold;
+  border: none;
 }
